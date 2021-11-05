@@ -65,7 +65,10 @@ class _ChooseCropTypeState extends State<ChooseCropType> {
                   itemBuilder: (context, index) {
                     return Container(
                       child: InkWell(
-                        onTap: () {print('Inkwell');},
+                        highlightColor: Colors.transparent,
+                        onTap: () {
+                          print('Inkwell');
+                        },
                         child: Container(
                           decoration: BoxDecoration(
                             color: Colors.white,
@@ -76,7 +79,6 @@ class _ChooseCropTypeState extends State<ChooseCropType> {
                               ),
                             ],
                           ),
-                          width: MediaQuery.of(context).size.width,
                           height: 70,
                           margin: EdgeInsets.only(
                             bottom: 20,
@@ -91,9 +93,17 @@ class _ChooseCropTypeState extends State<ChooseCropType> {
                             subtitle: Text(
                               '${items[index]['subtitle']}',
                             ),
-                            trailing: GestureDetector(
-                              child: Icon(Icons.mode_edit_rounded),
-                              onTap: (){print('edit');},
+                            trailing: Container(
+                              padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                              child: GestureDetector(
+                                child: Icon(
+                                  Icons.mode_edit_rounded,
+                                  size: 50,
+                                ),
+                                onTap: () {
+                                  print('edit');
+                                },
+                              ),
                             ),
                           ),
                         ),
