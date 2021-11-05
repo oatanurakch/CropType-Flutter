@@ -55,62 +55,63 @@ class _ChooseCropTypeState extends State<ChooseCropType> {
               height: 20,
             ),
             Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 20,
-                  vertical: 10,
-                ),
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: items.length,
-                  itemBuilder: (context, index) {
-                    return Container(
-                      child: InkWell(
-                        highlightColor: Colors.transparent,
-                        onTap: () {
-                          print('Inkwell');
-                        },
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(8),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black54,
-                              ),
-                            ],
-                          ),
-                          height: 70,
-                          margin: EdgeInsets.only(
-                            bottom: 20,
-                          ),
-                          child: ListTile(
-                            title: Text(
-                              '${items[index]['title']}',
-                              style: TextStyle(
-                                fontSize: 18,
-                              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 10,
+              ),
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: items.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    child: InkWell(
+                      highlightColor: Colors.transparent,
+                      onTap: () {
+                        print('Inkwell');
+                      },
+                      child: Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(8),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black54,
                             ),
-                            subtitle: Text(
-                              '${items[index]['subtitle']}',
+                          ],
+                        ),
+                        height: 70,
+                        margin: EdgeInsets.only(
+                          bottom: 20,
+                        ),
+                        child: ListTile(
+                          title: Text(
+                            '${items[index]['title']}',
+                            style: TextStyle(
+                              fontSize: 18,
                             ),
-                            trailing: Container(
-                              padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                              child: GestureDetector(
-                                child: Icon(
-                                  Icons.mode_edit_rounded,
-                                  size: 50,
-                                ),
-                                onTap: () {
-                                  print('edit');
-                                },
+                          ),
+                          subtitle: Text(
+                            '${items[index]['subtitle']}',
+                          ),
+                          trailing: Container(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                            child: GestureDetector(
+                              child: Icon(
+                                Icons.mode_edit_rounded,
+                                size: 50,
                               ),
+                              onTap: () {
+                                print('edit');
+                              },
                             ),
                           ),
                         ),
                       ),
-                    );
-                  },
-                )),
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
