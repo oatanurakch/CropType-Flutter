@@ -1,3 +1,4 @@
+import 'package:cropmonitor/monitorcrop.dart';
 import 'package:flutter/material.dart';
 
 class ChooseCropType extends StatefulWidget {
@@ -15,14 +16,6 @@ class _ChooseCropTypeState extends State<ChooseCropType> {
     },
     {
       'title': 'สวนองุ่น',
-      'subtitle': 'อัพเดตเมื่อ 05/11/2021 17:00',
-    },
-    {
-      'title': 'สวนกล้วย',
-      'subtitle': 'อัพเดตเมื่อ 05/11/2021 17:00',
-    },
-    {
-      'title': 'สวนแก้วมังกร',
       'subtitle': 'อัพเดตเมื่อ 05/11/2021 17:00',
     },
   ];
@@ -67,7 +60,14 @@ class _ChooseCropTypeState extends State<ChooseCropType> {
                     child: InkWell(
                       highlightColor: Colors.transparent,
                       onTap: () {
-                        print('Inkwell');
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => buildCropMonitor(
+                              items[index]['title'],
+                            ),
+                          ),
+                        );
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -93,18 +93,26 @@ class _ChooseCropTypeState extends State<ChooseCropType> {
                           subtitle: Text(
                             '${items[index]['subtitle']}',
                           ),
-                          trailing: Container(
-                            padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                            child: GestureDetector(
-                              child: Icon(
-                                Icons.mode_edit_rounded,
-                                size: 50,
-                              ),
-                              onTap: () {
-                                print('edit');
-                              },
-                            ),
-                          ),
+
+
+
+
+                          // trailing: Container(
+                          //   padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          //   child: GestureDetector(
+                          //     child: Icon(
+                          //       Icons.mode_edit_rounded,
+                          //       size: 50,
+                          //     ),
+                          //     onTap: () {
+                          //       print('edit');
+                          //     },
+                          //   ),
+                          // ),
+
+
+
+                          
                         ),
                       ),
                     ),
